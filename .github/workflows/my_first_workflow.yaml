@@ -26,7 +26,7 @@ jobs:
       
       - name: send email
         id: send_email
-        uses: dawid6/action-send-mail@v3
+        uses: dawidd6/action-send-mail@v3
         with:
           server_address: ${{secrets.EMAIL_SERVER}}
           server_port: ${{secrets.EMAIL_PORT}}
