@@ -1,0 +1,25 @@
+#this is the name of the workflow
+#CI
+
+name: My first workflow
+on:
+  #any push will trigger thi workflow
+- push
+
+jobs:
+  my_first_job:
+  #from this point onwards its ubuntu
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: get date in github
+        id: get_date_in_github
+        run: echo "date in github $(date)"
+
+      - name: list directory
+        id: list_directory
+        run: echo "$(ls -l)"
+
+      - name: echo github context
+        id: echo_github_context
+        run: "ref_name ${{github.ref_name}}\n repository ${{github.repository}}\n owner ${{github_repository_owner}}"
